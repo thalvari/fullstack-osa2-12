@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import ReactWeather from 'react-open-weather'
 
 const App = () => {
     const [countries, setCountries] = useState([])
@@ -77,6 +78,11 @@ const Country = ({country}) => {
             <h2>languages</h2>
             <ul>{getLanguages()}</ul>
             <img src={country.flag} alt='flag' height='80'/>
+            <ReactWeather
+                forecast='today'
+                apikey='eb48f05dafaf4c46b06164555190402'
+                type='city'
+                city={country.capital}/>
         </div>
     )
 }
